@@ -10,6 +10,8 @@ Cada exercício aborda um problema simples e apresenta, de forma incremental, co
 | --- | --- | --- |
 | [Exercício 01 - Temperatura](exercicio-01-temperatura.py) | Classifica uma temperatura em Celsius como fria, agradável ou quente. | Entrada de dados, conversão de tipos e estruturas condicionais |
 | [Exercício 02 - Tempo](exercicio-02-tempo.py) | Calcula a média de cinco tempos e conta quantos ultrapassaram 100 milissegundos. | Laços de repetição, acumuladores, condicionais e f-strings |
+| [Exercício 03 - Função](exercicio-03-funcao.py) | Calcula a duração de um conteúdo de acordo com sua velocidade de reprodução. | Funções, parâmetros, retorno de múltiplos valores e formatação numérica |
+| [Minha Prática 01 - Divisão](minha-pratica-01.py) | Realiza uma divisão inteira entre dois números e exibe o quociente e o resto. | Entrada de dados, conversão de tipos, `divmod()` e acesso a tuplas |
 
 ## Como executar
 
@@ -30,6 +32,8 @@ Execute qualquer projeto com o comando:
 ```bash
 python exercicio-01-temperatura.py
 python exercicio-02-tempo.py
+python exercicio-03-funcao.py
+python minha-pratica-01.py
 ```
 
 Os programas solicitam os dados diretamente pelo terminal.
@@ -45,7 +49,7 @@ Os programas solicitam os dados diretamente pelo terminal.
 
 Este repositório será atualizado com novos mini projetos, explorando temas como:
 
-- Funções e modularização;
+- Modularização e reaproveitamento de código;
 - Listas, dicionários e outras estruturas de dados;
 - Tratamento de erros;
 - Leitura e gravação de arquivos;
