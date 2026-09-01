@@ -12,6 +12,8 @@ Cada exercício aborda um problema simples e apresenta, de forma incremental, co
 | [Exercício 02 - Tempo](exercicio-02-tempo.py) | Calcula a média de cinco tempos e conta quantos ultrapassaram 100 milissegundos. | Laços de repetição, acumuladores, condicionais e f-strings |
 | [Exercício 03 - Função](exercicio-03-funcao.py) | Calcula a duração de um conteúdo de acordo com sua velocidade de reprodução. | Funções, parâmetros, retorno de múltiplos valores e formatação numérica |
 | [Minha Prática 01 - Divisão](minha-pratica-01.py) | Realiza uma divisão inteira entre dois números e exibe o quociente e o resto. | Entrada de dados, conversão de tipos, `divmod()` e acesso a tuplas |
+| [Verificador de Senha](verifica-senha.py) | Verifica se uma senha possui pelo menos oito caracteres, uma letra maiúscula e um número. | Laços de repetição, condicionais, valores booleanos e métodos de string |
+| [Aplicações com Docker](Docker/) | Executa duas aplicações Python simples dentro de um contêiner. | Dockerfile, imagens, contêineres, `ENTRYPOINT` e `CMD` |
 
 ## Como executar
 
@@ -19,6 +21,7 @@ Cada exercício aborda um problema simples e apresenta, de forma incremental, co
 
 - Python 3 instalado
 - Um terminal ou editor de código
+- Docker instalado (opcional, para executar o exemplo da pasta `Docker`)
 
 Clone este repositório e acesse a pasta:
 
@@ -34,9 +37,30 @@ python exercicio-01-temperatura.py
 python exercicio-02-tempo.py
 python exercicio-03-funcao.py
 python minha-pratica-01.py
+python verifica-senha.py
 ```
 
 Os programas solicitam os dados diretamente pelo terminal.
+
+### Executar com Docker
+
+Crie a imagem a partir da raiz do repositório:
+
+```bash
+docker build -t mini-projetos-python ./Docker
+```
+
+Execute a aplicação padrão (`app.py`):
+
+```bash
+docker run --rm mini-projetos-python
+```
+
+Para executar a segunda aplicação (`app2.py`), substitua o argumento padrão:
+
+```bash
+docker run --rm mini-projetos-python app2.py
+```
 
 ## Objetivos
 
@@ -53,7 +77,8 @@ Este repositório será atualizado com novos mini projetos, explorando temas com
 - Listas, dicionários e outras estruturas de dados;
 - Tratamento de erros;
 - Leitura e gravação de arquivos;
-- Projetos com interfaces e integração com APIs.
+- Projetos com interfaces e integração com APIs;
+- Aprofundamento em Docker e conteinerização.
 
 ## Autor
 
