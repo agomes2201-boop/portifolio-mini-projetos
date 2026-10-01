@@ -17,6 +17,7 @@ Cada exercício aborda um problema simples e apresenta, de forma incremental, co
 | [Exercício 06 - Cadastro de Despesas](exercicio-06-while-cadastro-despesas.py) | Registra despesas até receber zero e exibe a quantidade, o maior valor e o total cadastrado. | Laço `while`, `break`, contadores, acumuladores e condicionais |
 | [Exercício 07 - Cálculo de Viagem](exercicio-07-calculo-viagem.py) | Calcula os litros de combustível necessários e o custo do combustível para uma viagem. | Funções, parâmetros, retorno de múltiplos valores, operações aritméticas e formatação numérica |
 | [Exercício 08 - Listas e Estoque](exercicio-08-listas.py) | Soma as unidades em estoque e identifica as posições dos produtos com menos de cinco unidades para reposição. | Listas, `enumerate()`, `append()`, `len()`, laço `for` e acumuladores |
+| [Desempenho do Servidor](desempenho-servidor.py) | Classifica o cumprimento de um SLA com base nos minutos de indisponibilidade e na quantidade de incidentes informados. | Entrada de dados, conversão de tipos, validação de valores negativos, condicionais e operadores lógicos |
 | [Aplicações com Docker](Docker/) | Executa duas aplicações Python simples dentro de um contêiner. | Dockerfile, imagens, contêineres, `ENTRYPOINT` e `CMD` |
 | [Atividade Docker - Cadastro de Itens](Atividade-Docker/) | Aplicação web para adicionar e listar itens armazenados em SQLite. | Flask, rotas GET/POST, formulários, SQLite, variáveis de ambiente e volumes Docker |
 
@@ -50,6 +51,7 @@ python exercicio-05-verfica-compra.py
 python exercicio-06-while-cadastro-despesas.py
 python exercicio-07-calculo-viagem.py
 python exercicio-08-listas.py
+python desempenho-servidor.py
 ```
 
 A maioria dos exercícios solicita os dados diretamente pelo terminal. Os exercícios 03 e 08 usam valores definidos nos próprios arquivos: o exercício 03 calcula a duração de 120 minutos com velocidade de reprodução de 2 vezes; o exercício 08 analisa o estoque `[12, 3, 0, 8, 2]`.
@@ -61,6 +63,19 @@ No exercício 06, digite `0` para encerrar o cadastro e exibir o resumo das desp
 No exercício 07, informe a distância em quilômetros, o consumo em km/l e o preço do combustível por litro. O consumo deve ser maior que zero. O custo calculado considera apenas o combustível.
 
 No exercício 08, as posições dos produtos começam em 1. Com o estoque do exemplo, o resultado é de 25 unidades no total e três produtos para reposição, nas posições `[2, 3, 5]`.
+
+### Avaliar o desempenho do servidor
+
+Execute `python desempenho-servidor.py` e informe os minutos de indisponibilidade e a quantidade inteira de incidentes. O programa usa as seguintes regras do exercício para avaliar o acordo de nível de serviço (SLA):
+
+| Condição | Resultado |
+| --- | --- |
+| Minutos de indisponibilidade ou quantidade de incidentes negativos | Valores inválidos inseridos |
+| Até 30 minutos de indisponibilidade e nenhum incidente | SLA Cumprido |
+| Até 60 minutos de indisponibilidade e no máximo um incidente, quando a condição anterior não for atendida | Atenção |
+| Demais casos com valores não negativos | SLA Não Cumprido |
+
+Por exemplo, `20` minutos e `0` incidentes resultam em **SLA Cumprido**; `45` minutos e `1` incidente resultam em **Atenção**; `70` minutos e `0` incidentes resultam em **SLA Não Cumprido**. Os dados são informados manualmente pelo terminal; o programa não coleta métricas do servidor automaticamente.
 
 ### Executar com Docker
 
